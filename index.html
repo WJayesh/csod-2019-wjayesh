@@ -1,0 +1,898 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap">
+    
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style type="text/css">body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+</style><style type="text/css">.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style><style data-jss="" data-meta="MuiGrid">
+.MuiGrid-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.MuiGrid-item {
+  margin: 0;
+  box-sizing: border-box;
+}
+.MuiGrid-zeroMinWidth {
+  min-width: 0;
+}
+.MuiGrid-direction-xs-column {
+  flex-direction: column;
+}
+.MuiGrid-direction-xs-column-reverse {
+  flex-direction: column-reverse;
+}
+.MuiGrid-direction-xs-row-reverse {
+  flex-direction: row-reverse;
+}
+.MuiGrid-wrap-xs-nowrap {
+  flex-wrap: nowrap;
+}
+.MuiGrid-wrap-xs-wrap-reverse {
+  flex-wrap: wrap-reverse;
+}
+.MuiGrid-align-items-xs-center {
+  align-items: center;
+}
+.MuiGrid-align-items-xs-flex-start {
+  align-items: flex-start;
+}
+.MuiGrid-align-items-xs-flex-end {
+  align-items: flex-end;
+}
+.MuiGrid-align-items-xs-baseline {
+  align-items: baseline;
+}
+.MuiGrid-align-content-xs-center {
+  align-content: center;
+}
+.MuiGrid-align-content-xs-flex-start {
+  align-content: flex-start;
+}
+.MuiGrid-align-content-xs-flex-end {
+  align-content: flex-end;
+}
+.MuiGrid-align-content-xs-space-between {
+  align-content: space-between;
+}
+.MuiGrid-align-content-xs-space-around {
+  align-content: space-around;
+}
+.MuiGrid-justify-xs-center {
+  justify-content: center;
+}
+.MuiGrid-justify-xs-flex-end {
+  justify-content: flex-end;
+}
+.MuiGrid-justify-xs-space-between {
+  justify-content: space-between;
+}
+.MuiGrid-justify-xs-space-around {
+  justify-content: space-around;
+}
+.MuiGrid-justify-xs-space-evenly {
+  justify-content: space-evenly;
+}
+.MuiGrid-spacing-xs-1 {
+  width: calc(100% + 8px);
+  margin: -4px;
+}
+.MuiGrid-spacing-xs-1 > .MuiGrid-item {
+  padding: 4px;
+}
+.MuiGrid-spacing-xs-2 {
+  width: calc(100% + 16px);
+  margin: -8px;
+}
+.MuiGrid-spacing-xs-2 > .MuiGrid-item {
+  padding: 8px;
+}
+.MuiGrid-spacing-xs-3 {
+  width: calc(100% + 24px);
+  margin: -12px;
+}
+.MuiGrid-spacing-xs-3 > .MuiGrid-item {
+  padding: 12px;
+}
+.MuiGrid-spacing-xs-4 {
+  width: calc(100% + 32px);
+  margin: -16px;
+}
+.MuiGrid-spacing-xs-4 > .MuiGrid-item {
+  padding: 16px;
+}
+.MuiGrid-spacing-xs-5 {
+  width: calc(100% + 40px);
+  margin: -20px;
+}
+.MuiGrid-spacing-xs-5 > .MuiGrid-item {
+  padding: 20px;
+}
+.MuiGrid-spacing-xs-6 {
+  width: calc(100% + 48px);
+  margin: -24px;
+}
+.MuiGrid-spacing-xs-6 > .MuiGrid-item {
+  padding: 24px;
+}
+.MuiGrid-spacing-xs-7 {
+  width: calc(100% + 56px);
+  margin: -28px;
+}
+.MuiGrid-spacing-xs-7 > .MuiGrid-item {
+  padding: 28px;
+}
+.MuiGrid-spacing-xs-8 {
+  width: calc(100% + 64px);
+  margin: -32px;
+}
+.MuiGrid-spacing-xs-8 > .MuiGrid-item {
+  padding: 32px;
+}
+.MuiGrid-spacing-xs-9 {
+  width: calc(100% + 72px);
+  margin: -36px;
+}
+.MuiGrid-spacing-xs-9 > .MuiGrid-item {
+  padding: 36px;
+}
+.MuiGrid-spacing-xs-10 {
+  width: calc(100% + 80px);
+  margin: -40px;
+}
+.MuiGrid-spacing-xs-10 > .MuiGrid-item {
+  padding: 40px;
+}
+.MuiGrid-grid-xs-auto {
+  flex-grow: 0;
+  max-width: none;
+  flex-basis: auto;
+}
+.MuiGrid-grid-xs-true {
+  flex-grow: 1;
+  max-width: 100%;
+  flex-basis: 0;
+}
+.MuiGrid-grid-xs-1 {
+  flex-grow: 0;
+  max-width: 8.333333%;
+  flex-basis: 8.333333%;
+}
+.MuiGrid-grid-xs-2 {
+  flex-grow: 0;
+  max-width: 16.666667%;
+  flex-basis: 16.666667%;
+}
+.MuiGrid-grid-xs-3 {
+  flex-grow: 0;
+  max-width: 25%;
+  flex-basis: 25%;
+}
+.MuiGrid-grid-xs-4 {
+  flex-grow: 0;
+  max-width: 33.333333%;
+  flex-basis: 33.333333%;
+}
+.MuiGrid-grid-xs-5 {
+  flex-grow: 0;
+  max-width: 41.666667%;
+  flex-basis: 41.666667%;
+}
+.MuiGrid-grid-xs-6 {
+  flex-grow: 0;
+  max-width: 50%;
+  flex-basis: 50%;
+}
+.MuiGrid-grid-xs-7 {
+  flex-grow: 0;
+  max-width: 58.333333%;
+  flex-basis: 58.333333%;
+}
+.MuiGrid-grid-xs-8 {
+  flex-grow: 0;
+  max-width: 66.666667%;
+  flex-basis: 66.666667%;
+}
+.MuiGrid-grid-xs-9 {
+  flex-grow: 0;
+  max-width: 75%;
+  flex-basis: 75%;
+}
+.MuiGrid-grid-xs-10 {
+  flex-grow: 0;
+  max-width: 83.333333%;
+  flex-basis: 83.333333%;
+}
+.MuiGrid-grid-xs-11 {
+  flex-grow: 0;
+  max-width: 91.666667%;
+  flex-basis: 91.666667%;
+}
+.MuiGrid-grid-xs-12 {
+  flex-grow: 0;
+  max-width: 100%;
+  flex-basis: 100%;
+}
+@media (min-width:600px) {
+  .MuiGrid-grid-sm-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-sm-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-sm-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-sm-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-sm-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-sm-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-sm-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-sm-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-sm-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-sm-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-sm-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-sm-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-sm-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-sm-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:960px) {
+  .MuiGrid-grid-md-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-md-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-md-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-md-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-md-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-md-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-md-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-md-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-md-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-md-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-md-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-md-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-md-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-md-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1280px) {
+  .MuiGrid-grid-lg-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-lg-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-lg-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-lg-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-lg-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-lg-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-lg-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-lg-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-lg-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-lg-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-lg-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-lg-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-lg-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-lg-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+@media (min-width:1920px) {
+  .MuiGrid-grid-xl-auto {
+    flex-grow: 0;
+    max-width: none;
+    flex-basis: auto;
+  }
+  .MuiGrid-grid-xl-true {
+    flex-grow: 1;
+    max-width: 100%;
+    flex-basis: 0;
+  }
+  .MuiGrid-grid-xl-1 {
+    flex-grow: 0;
+    max-width: 8.333333%;
+    flex-basis: 8.333333%;
+  }
+  .MuiGrid-grid-xl-2 {
+    flex-grow: 0;
+    max-width: 16.666667%;
+    flex-basis: 16.666667%;
+  }
+  .MuiGrid-grid-xl-3 {
+    flex-grow: 0;
+    max-width: 25%;
+    flex-basis: 25%;
+  }
+  .MuiGrid-grid-xl-4 {
+    flex-grow: 0;
+    max-width: 33.333333%;
+    flex-basis: 33.333333%;
+  }
+  .MuiGrid-grid-xl-5 {
+    flex-grow: 0;
+    max-width: 41.666667%;
+    flex-basis: 41.666667%;
+  }
+  .MuiGrid-grid-xl-6 {
+    flex-grow: 0;
+    max-width: 50%;
+    flex-basis: 50%;
+  }
+  .MuiGrid-grid-xl-7 {
+    flex-grow: 0;
+    max-width: 58.333333%;
+    flex-basis: 58.333333%;
+  }
+  .MuiGrid-grid-xl-8 {
+    flex-grow: 0;
+    max-width: 66.666667%;
+    flex-basis: 66.666667%;
+  }
+  .MuiGrid-grid-xl-9 {
+    flex-grow: 0;
+    max-width: 75%;
+    flex-basis: 75%;
+  }
+  .MuiGrid-grid-xl-10 {
+    flex-grow: 0;
+    max-width: 83.333333%;
+    flex-basis: 83.333333%;
+  }
+  .MuiGrid-grid-xl-11 {
+    flex-grow: 0;
+    max-width: 91.666667%;
+    flex-basis: 91.666667%;
+  }
+  .MuiGrid-grid-xl-12 {
+    flex-grow: 0;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+}
+</style><style data-jss="" data-meta="MuiTypography">
+.MuiTypography-root {
+  margin: 0;
+}
+.MuiTypography-body2 {
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+}
+.MuiTypography-body1 {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+}
+.MuiTypography-caption {
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.66;
+  letter-spacing: 0.03333em;
+}
+.MuiTypography-button {
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+}
+.MuiTypography-h1 {
+  font-size: 6rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.01562em;
+}
+.MuiTypography-h2 {
+  font-size: 3.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.00833em;
+}
+.MuiTypography-h3 {
+  font-size: 3rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: 0em;
+}
+.MuiTypography-h4 {
+  font-size: 2.125rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.00735em;
+}
+.MuiTypography-h5 {
+  font-size: 1.5rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.33;
+  letter-spacing: 0em;
+}
+.MuiTypography-h6 {
+  font-size: 1.25rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.0075em;
+}
+.MuiTypography-subtitle1 {
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: 0.00938em;
+}
+.MuiTypography-subtitle2 {
+  font-size: 0.875rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.57;
+  letter-spacing: 0.00714em;
+}
+.MuiTypography-overline {
+  font-size: 0.75rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 2.66;
+  letter-spacing: 0.08333em;
+  text-transform: uppercase;
+}
+.MuiTypography-srOnly {
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+}
+.MuiTypography-alignLeft {
+  text-align: left;
+}
+.MuiTypography-alignCenter {
+  text-align: center;
+}
+.MuiTypography-alignRight {
+  text-align: right;
+}
+.MuiTypography-alignJustify {
+  text-align: justify;
+}
+.MuiTypography-noWrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.MuiTypography-gutterBottom {
+  margin-bottom: 0.35em;
+}
+.MuiTypography-paragraph {
+  margin-bottom: 16px;
+}
+.MuiTypography-colorInherit {
+  color: inherit;
+}
+.MuiTypography-colorPrimary {
+  color: #3f51b5;
+}
+.MuiTypography-colorSecondary {
+  color: #f50057;
+}
+.MuiTypography-colorTextPrimary {
+  color: rgba(0, 0, 0, 0.87);
+}
+.MuiTypography-colorTextSecondary {
+  color: rgba(0, 0, 0, 0.54);
+}
+.MuiTypography-colorError {
+  color: #f44336;
+}
+.MuiTypography-displayInline {
+  display: inline;
+}
+.MuiTypography-displayBlock {
+  display: block;
+}
+</style><style data-jss="" data-meta="MuiDivider">
+.MuiDivider-root {
+  border: none;
+  height: 1px;
+  margin: 0;
+  flex-shrink: 0;
+  background-color: rgba(0, 0, 0, 0.12);
+}
+.MuiDivider-absolute {
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  position: absolute;
+}
+.MuiDivider-inset {
+  margin-left: 72px;
+}
+.MuiDivider-light {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+.MuiDivider-middle {
+  margin-left: 16px;
+  margin-right: 16px;
+}
+</style><style data-jss="" data-meta="MeReport">
+.MeReport-root-1 {
+  flex-grow: 1;
+}
+.MeReport-superHeading-2 {
+  color: #ffffff;
+  font-size: 30px;
+  margin-top: 5px;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 24px;
+  margin-left: 5px;
+}
+@media (max-width:959.95px) {
+  .MeReport-superHeading-2 {
+    font-size: 24px;
+  }
+}
+.MeReport-superSubHeading-3 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-top: 5px;
+  text-align: left;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 40px;
+  margin-left: 5px;
+}
+@media (max-width:959.95px) {
+  .MeReport-superSubHeading-3 {
+    font-size: 18px;
+  }
+}
+.MeReport-bannerBody-4 {
+  color: #ffffff;
+  width: 78%;
+  font-size: 16px;
+  margin-top: 5px;
+  text-align: left;
+  font-family: Roboto;
+  line-height: 19px;
+  margin-left: 5px;
+  padding-bottom: 0px;
+}
+.MeReport-heading-5 {
+  color: #4A4A4A;
+  width: 78%;
+  font-size: 28px;
+  margin-top: 25px;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 33px;
+}
+.MeReport-subHeading-6 {
+  color: #4A4A4A;
+  width: 78%;
+  font-size: 24px;
+  margin-top: 30px;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 28px;
+}
+.MeReport-title-7 {
+  color: #4A4A4A;
+  width: 78%;
+  font-size: 16px;
+  margin-top: 25px;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 19px;
+}
+.MeReport-body-8 {
+  color: #4A4A4A;
+  width: 78%;
+  font-size: 16px;
+  margin-top: 13px;
+  font-family: Roboto;
+  line-height: 19px;
+  padding-bottom: 0px;
+}
+.MeReport-reportItemHead-9 {
+  color: #4A4A4A;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: center;
+  font-family: Roboto;
+  font-weight: bold;
+  line-height: 16px;
+}
+@media (max-width:959.95px) {
+  .MeReport-reportItemHead-9 {
+    margin-top: 30px;
+  }
+}
+.MeReport-leftSmPadding-10 {
+  padding: 10px;
+  margin-top: 20px;
+  padding-left: 60px;
+}
+@media (max-width:1279.95px) {
+  .MeReport-leftSmPadding-10 {
+    padding-left: 65px;
+  }
+}
+@media (max-width:959.95px) {
+  .MeReport-leftSmPadding-10 {
+    padding-left: 10px;
+  }
+}
+.MeReport-reportItemContainer-11 {
+  width: 100%;
+  text-align: center;
+}
+@media (min-width:960px) {
+  .MeReport-reportItemContainer-11 {
+    border-right: 1px solid #DFDFDF;
+  }
+}
+.MeReport-reportItemValue-12 {
+  color: #4A4A4A;
+  font-size: 24px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 34px;
+}
+.MeReport-reportItemLabel-13 {
+  color: #4A4A4A;
+  font-size: 12px;
+  margin-top: 10px;
+  font-family: Roboto;
+  line-height: 14px;
+}
+.MeReport-reportItemSubLabel-14 {
+  color: #6D7278;
+  font-size: 10px;
+  font-style: italic;
+  font-family: Roboto;
+  line-height: 11px;
+}
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div class="App"><div class="root"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12" style="background-color: rgb(33, 146, 95); height: 66px; text-align: right;"><img src="data:image/png;base64,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" alt="Crio.Do" style="height: 42px; width: auto; padding: 10px;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12" style="background-color: rgb(39, 172, 112); height: fit-content; min-height: 140px; text-align: right;"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-1 MuiGrid-grid-md-1 MuiGrid-grid-lg-2"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-10 MuiGrid-grid-md-10 MuiGrid-grid-lg-8" style="padding: 20px;"><div style="display: table;"><p class="MuiTypography-root MeReport-superHeading-2 MuiTypography-body1">Crio Summer of Doing 2019 - Project &amp; Skills Summary</p><p class="MuiTypography-root MeReport-superSubHeading-3 MuiTypography-body1">Name: Jayesh Sharma , GitHub Handle: wjayesh</p><p class="MuiTypography-root MeReport-bannerBody-4 MuiTypography-body1">Verified by Crio.Do on 24th June 2019</p></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-1 MuiGrid-grid-md-1 MuiGrid-grid-lg-2"></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiGrid-root MuiGrid-container" style="margin-top: 25px; text-align: left;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-1 MuiGrid-grid-md-1 MuiGrid-grid-lg-2"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-10 MuiGrid-grid-md-6 MuiGrid-grid-lg-4" style="border: 1px solid rgb(223, 223, 223); background: rgb(250, 251, 252); margin-left: 15px; border-radius: 5px;"><ul class="list-group" style="list-style: none;"><li class="list-group-item" style="padding: 7px;"><a href="#CSOD">Crio Summer of Doing-2019</a></li><li class="list-group-item" style="padding: 7px;"><a href="#performance">Performance</a></li><li class="list-group-item" style="padding: 7px;"><a href="#projectSummary">Project Summary</a></li></ul></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-1 MuiGrid-grid-md-1 MuiGrid-grid-lg-2"></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12"><div class="MuiGrid-root MuiGrid-container"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1 MuiGrid-grid-lg-2"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-10 MuiGrid-grid-lg-8" style="padding: 15px; text-align: left;"><p class="MuiTypography-root MeReport-heading-5 MuiTypography-body1" id="CSOD">Crio Summer of Doing - 2019</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Duration</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">May-Jun 2019 (160+ hours)</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Program Structure</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">In Crio Summer Of Doing, student developers build real products in a work-like environment called Micro-Experience, setup by Crio.Do</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Scope</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Built a distributed system backend for food order platform, QEats, with Java Spring Boot and MongoDB</p><hr class="MuiDivider-root" style="margin-top: 25px;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12" style="text-align: left;"><p class="MuiTypography-root MeReport-heading-5 MuiTypography-body1">Performance</p></div><div class="MuiGrid-root MuiGrid-container" id="performance" style="margin-top: 25px; border: 1px solid rgb(223, 223, 223); background: rgb(250, 251, 252); border-radius: 5px;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-4" style="width: 100%; padding: 25px 25px 25px 15px; margin-top: 20px; text-align: center;"><div style="padding: 10px;"><div class="MeReport-reportItemHead-9">Execution Rigour</div><div style="margin-left: 5px; text-align: center;"><div style="width: 110px; height: 10px; display: inline-flex; margin-top: 30px;"><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div></div></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-4" style="width: 100%; padding: 25px; margin-top: 20px; text-align: center;"><div style="padding: 10px;"><div class="MeReport-reportItemHead-9">Technical Knowhow</div><div style="margin-left: 5px; text-align: center;"><div style="width: 110px; height: 10px; display: inline-flex; margin-top: 30px;"><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div><div style="width: 20%; height: 100%; background-color: rgb(39, 172, 112); border: 1px solid rgb(255, 255, 255);"></div></div></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-4 MuiGrid-grid-lg-4" style="width: 100%; padding: 25px 25px 25px 15px; margin-top: 20px; text-align: center;"><div style="padding: 10px;"><div class="MeReport-reportItemValue-12">64/65</div><div class="MeReport-reportItemLabel-13">Test cases passed</div></div></div></div><div class="MuiGrid-root MuiGrid-container" style="text-align: center; display: flex;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-12" style="text-align: left;"><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Awards</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4" style="padding: 25px; margin-top: 0px; text-align: left; display: flex;"><div style="display: inline-flex;"><div><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/Bee.svg" alt="Bee" style="width: 70px; height: 70px;"></div><div style="display: block; padding-top: 13px; padding-left: 17px;"><div style="font-size: 18px; line-height: 24px;">Relentless Bee</div><div style="font-size: 15px; line-height: 22px;">Never give up</div></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4" style="padding: 25px; margin-top: 0px; text-align: left; display: flex;"><div style="display: inline-flex;"><div><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/Hawk.svg" alt="hawk" style="width: 70px; height: 70px;"></div><div style="display: block; padding-top: 13px; padding-left: 17px;"><div style="font-size: 18px; line-height: 24px;">Skillful Hawk</div><div style="font-size: 15px; line-height: 22px;">Perfection is key</div></div></div></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4" style="padding: 25px; margin-top: 0px; text-align: left; display: none;"><div style="display: inline-flex;"><div><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/Elephant.svg" alt="Elephant" style="width: 70px; height: 70px;"></div><div style="display: block; padding-top: 13px; padding-left: 17px;"><div style="font-size: 18px; line-height: 24px;">Altruist Elephant</div><div style="font-size: 15px; line-height: 22px;">Model citizen</div></div></div></div></div><hr class="MuiDivider-root" style="margin-top: 20px;"><p class="MuiTypography-root MeReport-heading-5 MuiTypography-body1" id="projectSummary">Project Summary</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 1 : Get restaurants for a given location</p><div class="MuiGrid-root MuiGrid-container" style="margin-top: 25px; padding: 25px;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone1" alt="APP_SCREENSHOT" style="width: 225px; height: auto;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"></div></div><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">APIs Implemented</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">/qeats/v1/restaurants getRestaurants</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Retrieve a list of restaurants using the “/restaurants” API</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Implement a simple GET API in Spring Boot using MVCS architecture</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Plug in MongoDB to the backend to start getting some real restaurants</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">JUnit, Jackson, Gradle, Spring Boot, Postman, cURL, Java Annotations, Java Interfaces, HTTP Error codes, Lombok, Mockito, ODM, MongoDB, Dependency Injection</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 2: Debugging a production crash</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Debugging a production issue using Scientific Debugging approach</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Scientific Debugging</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 3: Tackle home screen load with Caching</p><div class="MuiGrid-root MuiGrid-container" style="padding: 25px;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-12 MuiGrid-grid-lg-12" style="text-align: center;"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone3.gif" alt="APP_SCREENSHOT" style="width: 100%; max-width: 550px; height: auto;"></div></div><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Solve the user’s problem of home screen loading very slowly due to load by identifying the bottleneck layer</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Fixing the bottleneck layer using Caching</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Performance bottleneck identification, JMeter, Redis</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 4: Search for restaurants by name, food, and their attributes</p><div class="MuiGrid-root MuiGrid-container" style="margin-top: 25px; padding: 25px;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone4_image1.jpg" alt="APP_SCREENSHOT" style="width: 100%; max-width: 225px; height: auto;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone4_image2.jpg" alt="APP_SCREENSHOT" style="width: 100%; max-width: 225px; height: auto;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone4_image3.jpg" alt="APP_SCREENSHOT" style="width: 100%; max-width: 225px; height: auto;"></div></div><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Search for restaurants by name, cuisine, food item, and their attributes</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">MongoDB Querying</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 5: Improve restaurant search performance</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Parallelize restaurant search using multi-threading</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Multi-threading</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 6: Implement Cart/Order APIs</p><div class="MuiGrid-root MuiGrid-container" style="margin-top: 25px; padding: 25px;"><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone6_image1.jpg" alt="APP_SCREENSHOT" style="width: 195px; height: auto;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone6_image2.jpg" alt="APP_SCREENSHOT" style="width: 195px; height: auto;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone6_image3.jpg" alt="APP_SCREENSHOT" style="width: 195px; height: auto;"></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-sm-12 MuiGrid-grid-md-6 MuiGrid-grid-lg-4"><img src="https://storage.googleapis.com/crio-do-dev.appspot.com/milestone6_image4.jpg" alt="APP_SCREENSHOT" style="width: 195px; height: auto;"></div></div><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">APIs Implemented</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">/qeats/v1/cart getCart</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">/qeats/v1/cart/item addItem</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">/qeats/v1/cart/item deleteItem</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">/qeats/v1/order placeOrder</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Implement cart APIs - getCart, addItem, deleteItem </p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Implement order API - placeOrder</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Recap of all concepts learnt so far , HTTP verbs - POST, DELETE</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 7: Deploy backend in cloud</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Deploy backend using Docker in cloud</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Docker,GCloud/AWS</p><p class="MuiTypography-root MeReport-subHeading-6 MuiTypography-body1">Milestone 8: Implement functionality to asynchronously send SMS or Email</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Work Done</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">Implement functionality to send SMS/Email on order creation without increasing perceived user latency</p><p class="MuiTypography-root MeReport-title-7 MuiTypography-body1">Skills Acquired</p><p class="MuiTypography-root MeReport-body-8 MuiTypography-body1">RabbitMQ, External API integration</p></div><div class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-1 MuiGrid-grid-lg-2"></div></div></div></div></div></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="/static/js/bundle.js"></script><script src="/static/js/0.chunk.js"></script><script src="/static/js/main.chunk.js"></script>
+
+</body></html>
